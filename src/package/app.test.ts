@@ -45,3 +45,11 @@ test('NumbersApp should log sorted by frequency', () => {
 	vi.advanceTimersByTime(15000);
 	expect(subscriber).lastCalledWith({ type: 'frequencies', frequencies: [[9, 3], [10, 2]] });
 });
+
+test('NumbersApp should throw on invalid input', () => {
+	const app = new NumbersApp();
+	expect(() => app.startLogging(-1000)).toThrow();
+	expect(() => app.startLogging(10.5)).toThrow();
+	expect(() => app.input(-10)).toThrow();
+	expect(() => app.input(2.5)).toThrow();
+});

@@ -33,6 +33,9 @@ export class NumbersApp {
 	}
 
 	input(n: number): void {
+		if (n < 0 || !Number.isInteger(n)) {
+			throw new Error('Input must be a non-negative integer');
+		}
 		this.frequencies.set(n, (this.frequencies.get(n) ?? 0) + 1);
 		this.emit({ type: 'input', value: n });
 		if (this.isSpecial(n)) {
@@ -41,6 +44,9 @@ export class NumbersApp {
 	}
 
 	startLogging(logInterval: Milliseconds): void {
+		if (logInterval <= 0 || !Number.isInteger(logInterval)) {
+			throw new Error('logInterval must be a positive integer');
+		}
 		this.timer.start(logInterval);
 		this.emit({ type: 'start', interval: logInterval });
 	}
