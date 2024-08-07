@@ -2,14 +2,11 @@
 
 This is a demo project for FTR.
 
-## Structure
-
-The project is written so that the majority of the functionality is contained within libraries in the `src/packages` directory.
-This creates a clean separation of concerns between the application functionality and the user interface, and should allow for easy implementation of alternative interfaces, such as a CLI or TUI.
-It also allows testing the majority of the applications logic without the need for rendering a full React application (though, some end-to-end tests would still be a good idea I have not implemented them here).
-The exported `NumbersApp` is then adapted to the React application rooted in `src/main.tsx`.
-
 ## How to run
+
+### Live
+
+The application is deployed to GitHub Pages and can be accessed at [`http://tekerson.github.io/ftr-numbers/`](http://tekerson.github.io/ftr-numbers/).
 
 ### Tests
 
@@ -26,6 +23,8 @@ npm run test
 ```
 
 ### Local Development
+
+1. Install dependencies
 
 ```bash
 npm install
